@@ -17,9 +17,9 @@ def main():
 
     sample_text = utils.get_text_from_file(args.sample)
     agent = translator_factory.get_agent(AGENT)()
-    schema_translator = translator_factory.get_schema(args.schema)
+    schema_translator = translator_factory.get_schema(args.schema)(agent)
 
-    
+    schema_translator.translate(sample_text)
 
 
 if __name__=='__main__':

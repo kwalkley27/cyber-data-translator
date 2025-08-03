@@ -9,9 +9,10 @@ class GeminiAgent(BaseTranslatorAgent):
         return genai.GenerativeModel("gemini-1.5-flash", system_instruction=system_instructions)
 
     def generate(self, prompt:str) -> str:
-        return self.model.generate_content(prompt)
+        return self.model.generate_content(prompt).text.strip()
     
     def __init__(self):
+        super().__init__()
         self.system_instructions = '''You are a helpful agent meant to help translate sample data into a normalized cyber schema. Only use the context provided about the schema to come up with the proper mappings'''
         self.model = self.setup(self.system_instructions)
 
