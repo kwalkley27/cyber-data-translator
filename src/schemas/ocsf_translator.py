@@ -13,6 +13,7 @@
 # limitations under the License.
 
 from schemas.base_schema_translator import BaseSchemaTranslator
+from inference.base_translator_agent import BaseTranslatorAgent
 
 class OCSFTranslator(BaseSchemaTranslator):
 
@@ -22,3 +23,7 @@ class OCSFTranslator(BaseSchemaTranslator):
     @classmethod
     def name(cls):
         return 'OCSF'
+    
+    def __init__(self, agent:BaseTranslatorAgent):
+        super().__init__()
+        self.agent = agent
