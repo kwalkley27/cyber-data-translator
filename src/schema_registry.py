@@ -4,6 +4,7 @@ from schemas.base_schema_translator import BaseSchemaTranslator
 
 
 def discover_schemas():
+    '''Dynamically loads BaseSchemaTranslator subclasses into a dictionary, mapped by the classes name function'''
     package = 'schemas'
 
     schema_classes = {}
