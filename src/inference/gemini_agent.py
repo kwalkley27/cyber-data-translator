@@ -6,7 +6,7 @@ class GeminiAgent(BaseTranslatorAgent):
 
 
     def setup(self, system_instructions:str):
-        return genai.GenerativeModel("gemini-1.5-flash", system_instruction=system_instructions)
+        return genai.GenerativeModel("gemini-2.5-pro", system_instruction=system_instructions)
 
     def generate(self, prompt:str) -> str:
         return self.model.generate_content(prompt).text.strip()
