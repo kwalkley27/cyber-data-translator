@@ -2,10 +2,10 @@ import requests
 from requests.exceptions import ConnectionError, HTTPError, RequestException, Timeout
 from bs4 import BeautifulSoup
 
-def get_text_from_url(url:str) -> str:
+def get_text_from_url(url:str, parser:str) -> str:
     try:
         response = requests.get(url)
-        soup = BeautifulSoup(response.text, "html.parser")
+        soup = BeautifulSoup(response.text, parser)
         return soup.get_text(separator="\n", strip=True)
     except ConnectionError:
         print("Failed to connect to the server")
