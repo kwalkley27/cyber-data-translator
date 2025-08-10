@@ -1,6 +1,7 @@
 import argparse
 import utils
 import translator_factory
+import os
 
 AGENT='gemini'
 
@@ -20,7 +21,7 @@ def print_disclaimer():
 def main():
     args = define_cli_arguments().parse_args()
 
-    sample_text = utils.get_text_from_file(args.sample)
+    sample_text = utils.get_text_from_file(os.path.normpath(args.sample))
     agent = translator_factory.get_agent(AGENT)()
     schema_translator = translator_factory.get_schema(args.schema)(agent)
 
