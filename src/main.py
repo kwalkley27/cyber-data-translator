@@ -25,6 +25,7 @@ def main():
     schema_translator = translator_factory.get_schema(args.schema)(agent)
 
     print_disclaimer()
+    print('\n')
 
     schema_translator.translate(sample_text)
 
