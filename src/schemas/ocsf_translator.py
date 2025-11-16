@@ -91,18 +91,30 @@ class OCSFTranslator(BaseSchemaTranslator):
 
         return self.agent.generate(prompt)
 
-    def translate(self, sample:str):
+    def translate(self, sample: str) -> None:
+        """Translate a sample to OCSF schema.
+
+        Args:
+            sample: Raw data sample to translate
+        """
+        import logging
+        logger = logging.getLogger(__name__)
+
+        logger.info("Inferring OCSF category")
         ocsf_category = self.infer_category(sample)
         print(f'The inferred OCSF category is: {ocsf_category}')
 
+        logger.info("Inferring OCSF class")
         ocsf_class = self.infer_class(sample, ocsf_category)
         print(f'The inferred OCSF class is: {ocsf_class}')
 
+        logger.info("Generating field mapping")
         mapping = self.infer_mapping(sample, ocsf_category, ocsf_class)
         print('\nInferred Mapping:')
         print('\n-------------------------------\n')
         print(mapping)
 
+        logger.info("Fetching required fields")
         print('\n')
         print('Required fields: ', self.get_required_fields(ocsf_category, ocsf_class))
 
