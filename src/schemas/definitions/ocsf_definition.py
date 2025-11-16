@@ -20,8 +20,8 @@ OCSF_CATEGORIES = {
 }
 
 OCSF_CLASSES = {
-    'System Activty': {
-        'File System Activty': 'https://schema.ocsf.io/1.5.0/classes/file_activity',
+    'System Activity': {
+        'File System Activity': 'https://schema.ocsf.io/1.5.0/classes/file_activity',
         'Kernel Extension Activity': 'https://schema.ocsf.io/1.5.0/classes/kernel_extension_activity',
         'Kernel Activity': 'https://schema.ocsf.io/1.5.0/classes/kernel_activity',
         'Memory Activity': 'https://schema.ocsf.io/1.5.0/classes/memory_activity',
@@ -66,7 +66,7 @@ OCSF_CLASSES = {
         'User Inventory Info': 'https://schema.ocsf.io/1.5.0/classes/user_inventory',
         'Operating System Patch State': 'https://schema.ocsf.io/1.5.0/classes/patch_state',
         'Device Config State Change': 'https://schema.ocsf.io/1.5.0/classes/device_config_state_change',
-        'Sofware Inventory Info': 'https://schema.ocsf.io/1.5.0/classes/software_info',
+        'Software Inventory Info': 'https://schema.ocsf.io/1.5.0/classes/software_info',
         'OSINT Inventory Info': 'https://schema.ocsf.io/1.5.0/classes/osint_inventory_info',
         'Cloud Resources Inventory Info': 'https://schema.ocsf.io/1.5.0/classes/cloud_resources_inventory_info',
         'Live Evidence Info': 'https://schema.ocsf.io/1.5.0/classes/evidence_info'
